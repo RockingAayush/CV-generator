@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+<style>
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  width: 80%;
+  max-width: 1000px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background-color: #dcdcdc;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+}
+
+.header p {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+}
+
+.card {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #72879a;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.card p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card li::before {
+  content: "•";
+  color: #1e88e5;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>{{user_profile.name}}</h1>
+    <p>{{user_profile.phone}} | {{user_profile.email}}</p>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>{{user_profile.summary}}</p>
+      <h2>Education</h2>
+      <p><strong>Schooling:</strong> {{user_profile.school}}</p>
+      <p><strong>University:</strong> {{user_profile.university}}</p>
+      <p><strong>Degree:</strong> {{user_profile.degree}} in {{user_profile.branch}}</p>
+      <p><strong>CGPA:</strong> {{user_profile.cgpa}}</p>
+    </div>
+    <div class="card">
+      <h2>Previous Works</h2>
+      <ul>
+        {% for sentence in previous_work_sentences %}
+            <li>{{ sentence }}.</li>
+        {% endfor %}
+    </ul>
+      <h2>Skills</h2>
+      <ul>
+        {% for sentence in skill_sentences %}
+            <li>{{ sentence }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

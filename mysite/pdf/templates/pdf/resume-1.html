@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .info-section {
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            /* Center the content horizontally */
+            gap: 40px;
+            /* Space between email and phone */
+            margin-bottom: 40px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            display: inline-block;
+            color: #2c3e50;
+            vertical-align: top;
+        }
+
+        .info-value {
+            display: inline-block;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #10becb;
+            padding-bottom: 5px;
+        }
+
+        p,
+        ul,
+        li {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            columns: 2;
+            /* Two-column layout for skills */
+        }
+
+        .skills li {
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{user_profile.name}}</h1>
+
+        <div class="contact-info">
+            <div>
+                <span class="info-label">Email:</span>
+                <span class="info-value">{{user_profile.email}}</span>
+            </div>
+
+            <div>
+                <span class="info-label">Phone:</span>
+                <span class="info-value">{{user_profile.phone}}</span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>About Me</h2>
+            <p>{{user_profile.summary}}</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Education</h2>
+
+            <p><strong>{{user_profile.school}}</strong><br>
+                <strong>{{user_profile.university}}</strong><br>
+                <strong>{{user_profile.degree}} in {{user_profile.branch}}</strong><br>
+                <strong>CGPA:</strong> {{user_profile.cgpa}}
+            </p>
+
+
+        </div>
+
+        <div class="info-section">
+            <h2>Previous Works</h2>
+            <ul>
+                {% for sentence in previous_work_sentences %}
+                    <li>{{ sentence }}.</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div class="info-section">
+            <h2>Skills</h2>
+
+            <ul>
+                {% for sentence in skill_sentences %}
+                    <li>{{ sentence }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
