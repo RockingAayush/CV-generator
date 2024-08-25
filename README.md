@@ -13,7 +13,7 @@ This Django project allows users to create professional resumes by entering thei
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/django-cv-generator.git
+    git clone https://github.com/RockingAayush/CV-generator.git
     ```
 
 2. **Navigate to the project directory:**
