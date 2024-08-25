@@ -82,10 +82,6 @@ This project uses [pdfkit](https://pypi.org/project/pdfkit/) for rendering HTML 
     brew install wkhtmltopdf
     ```
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - This project is inspired by the need to create a quick and easy solution for generating professional resumes.
