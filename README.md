@@ -22,25 +22,19 @@ This Django project allows users to create professional resumes by entering thei
     cd CV-generator
     ```
 
-3. **Install the required dependencies:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Apply the migrations:**
+3. **Apply the migrations:**
 
     ```bash
     python manage.py migrate
     ```
 
-5. **Start the development server:**
+4. **Start the development server:**
 
     ```bash
     python manage.py runserver
     ```
 
-6. **Access the application:**
+5. **Access the application:**
 
     Open your web browser and go to `http://127.0.0.1:8000/` to use the CV Generator.
 
@@ -69,8 +63,33 @@ This Django project allows users to create professional resumes by entering thei
 ## PDF Generation
 
 This project uses [pdfkit](https://pypi.org/project/pdfkit/) for rendering HTML templates as PDF files. Ensure that `wkhtmltopdf` is installed on your system.
+Since wkhtmltopdf needs to be added to path, you'll need to install it manually. Here’s how you can do that:
 
+- **Download the appropriate wheel file for wkhtmltopdf:**
 
+    Visit a website like https://github.com/JazzCore/python-pdfkit for installation details, or download the .whl file from a trusted source.
+- **Install the wheel file:**
+
+    ```bash
+    pip install /path/to/your/wkhtmltopdf.whl
+    ```
+- **Ensure wkhtmltopdf is available on your system's PATH:**
+
+*Windows*
+- Right-click on "This PC" or "My Computer" and select "Properties."
+- Click on "Advanced system settings."
+- Click on "Environment Variables."
+- Under "System variables," find the PATH variable and click "Edit."
+- Add the path to the directory where wkhtmltopdf.exe is located.
+
+*Linux/macOS*
+- You can add wkhtmltopdf to your PATH by editing your shell configuration file (~/.bashrc, ~/.zshrc, etc.):
+
+```bash
+export PATH="/path/to/wkhtmltopdf:$PATH"
+```
+  
+- After adding it to the PATH, run source ~/.bashrc or source ~/.zshrc to apply the changes.
 ## Acknowledgments
 
 - This project is inspired by the need to create a quick and easy solution for generating professional resumes.
