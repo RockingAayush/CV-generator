@@ -70,17 +70,6 @@ This Django project allows users to create professional resumes by entering thei
 
 This project uses [pdfkit](https://pypi.org/project/pdfkit/) for rendering HTML templates as PDF files. Ensure that `wkhtmltopdf` is installed on your system.
 
-- **For Ubuntu:**
-
-    ```bash
-    sudo apt-get install wkhtmltopdf
-    ```
-
-- **For MacOS:**
-
-    ```bash
-    brew install wkhtmltopdf
-    ```
 
 ## Acknowledgments
 
