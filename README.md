@@ -19,7 +19,7 @@ This Django project allows users to create professional resumes by entering thei
 2. **Navigate to the project directory:**
 
     ```bash
-    cd django-cv-generator
+    cd CV-generator
     ```
 
 3. **Install the required dependencies:**
